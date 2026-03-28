@@ -1,42 +1,34 @@
 # Codex to Obsidian Note Poster
 
-Codex to Obsidian Note Poster is a dual-integration project for creating new notes in Obsidian from Codex.
+Codex to Obsidian Note Poster is a desktop-only Obsidian plugin that lets trusted local tools create new notes in Obsidian through a simple localhost HTTP endpoint.
 
-This repository currently includes:
+The plugin is designed for lightweight capture and automation workflows. It runs only on `127.0.0.1`, requires an API key, and writes notes into a single configured default folder inside your vault. This keeps the behavior predictable and reduces the risk of arbitrary writes across the vault.
 
-- A Codex MCP plugin at the repo root that writes new Markdown notes directly into a configured Obsidian vault
-- The release assets for the companion Obsidian desktop plugin, which exposes a localhost-only HTTP endpoint on `127.0.0.1`
+Version `0.1.0` focuses on a narrow, safe workflow:
 
-## Repository Layout
+- create new notes only
+- refuse to overwrite existing notes
+- sanitize note titles into safe filenames
+- support optional YAML frontmatter
+- keep configuration simple with a port, API key, and default folder
 
-### Codex MCP plugin
+This makes it a good fit for local automation scenarios such as:
 
-The root package contains the Codex MCP plugin source.
+- sending notes from Codex or other local AI tools into Obsidian
+- capturing summaries, meeting notes, or status updates into an inbox folder
+- building personal workflows that treat Obsidian as the final note destination
 
-Key files:
+The repository also includes a companion Codex MCP plugin for direct vault writes, but the Obsidian community plugin itself is focused on the localhost note intake workflow inside the Obsidian desktop environment.
 
-- `package.json`
-- `src/create-note.mjs`
-- `src/server.mjs`
-- `tests/create-note.test.mjs`
-
-### Obsidian release assets
-
-The repository also includes the built assets required for the Obsidian community plugin release:
-
-- `manifest.json`
-- `main.js`
-- `styles.css`
-- `versions.json`
-
-## Codex Plugin Setup
+## Obsidian Plugin Setup
 
 1. Run `npm install` in the repo root.
-2. Run `npm test` to verify the plugin.
-3. Update `.mcp.json` if you want a different vault path.
-4. Register the plugin in your Codex local plugin catalog.
+2. Run `npm run build`.
+3. Copy `manifest.json`, `main.js`, `styles.css`, and `versions.json` into your vault's `.obsidian/plugins/codex-note-poster/` folder for local testing.
+4. Enable the plugin in Obsidian.
+5. Configure the API key, port, and default folder in plugin settings.
 
-## Obsidian Request Shape
+## HTTP Request Shape
 
 `POST /notes`
 
@@ -56,6 +48,17 @@ Send the API key as:
 Authorization: Bearer <api-key>
 ```
 
+## Codex Companion Plugin
+
+The `codex-plugin/` directory contains the companion Codex MCP plugin for direct vault writes.
+
+Setup:
+
+1. Open `codex-plugin/`.
+2. Run `npm install`.
+3. Update `codex-plugin/.mcp.json` if you want a different vault path.
+4. Register the plugin in your Codex local plugin catalog.
+
 ## Release Notes
 
 Use [RELEASE_NOTES_v0.1.0.md](/Users/jessebanuelospersonalmacmini/Downloads/files/codex-to-obsidian-note-poster/RELEASE_NOTES_v0.1.0.md) as the GitHub release body for `v0.1.0`.
@@ -68,4 +71,4 @@ Before submitting the Obsidian plugin:
 - keep `versions.json` updated
 - follow the Obsidian community plugin review process
 
-See `COMMUNITY-SUBMISSION-CHECKLIST.md` for the short checklist.
+See [COMMUNITY-SUBMISSION-CHECKLIST.md](/Users/jessebanuelospersonalmacmini/Downloads/files/codex-to-obsidian-note-poster/COMMUNITY-SUBMISSION-CHECKLIST.md) for the short checklist.

@@ -1,14 +1,18 @@
 {
-  "name": "obsidian-note-poster",
+  "name": "codex-note-poster",
   "version": "0.1.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test tests/create-note.test.mjs",
-    "start": "node src/server.mjs"
+    "build": "node esbuild.config.mjs production",
+    "dev": "node esbuild.config.mjs",
+    "test": "node --test tests/note-service.test.mjs"
   },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.28.0",
-    "zod": "^3.25.76"
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "builtin-modules": "^4.0.0",
+    "esbuild": "^0.25.10",
+    "obsidian": "^1.8.10",
+    "typescript": "^5.9.2"
   }
 }

@@ -2,19 +2,25 @@
 
 Initial public release of Codex to Obsidian Note Poster.
 
-This repository includes two related integrations:
+Codex to Obsidian Note Poster is a desktop-only Obsidian plugin that lets trusted local tools create new notes in Obsidian through a simple localhost HTTP endpoint.
 
-- An Obsidian desktop plugin that exposes a localhost-only HTTP endpoint on `127.0.0.1`
-- A Codex MCP plugin that writes new notes directly into a configured Obsidian vault
+The plugin is designed for lightweight capture and automation workflows. It runs only on `127.0.0.1`, requires an API key, and writes notes into a single configured default folder inside your vault. This keeps the behavior predictable and reduces the risk of arbitrary writes across the vault.
 
-### Obsidian plugin features
+Version `0.1.0` focuses on a narrow, safe workflow:
 
-- Creates new notes only
-- Writes into one configured default folder
-- Requires an API key
-- Refuses overwrites
-- Supports optional YAML frontmatter
-- Desktop-only plugin
+- create new notes only
+- refuse to overwrite existing notes
+- sanitize note titles into safe filenames
+- support optional YAML frontmatter
+- keep configuration simple with a port, API key, and default folder
+
+This makes it a good fit for local automation scenarios such as:
+
+- sending notes from Codex or other local AI tools into Obsidian
+- capturing summaries, meeting notes, or status updates into an inbox folder
+- building personal workflows that treat Obsidian as the final note destination
+
+The repository also includes a companion Codex MCP plugin for direct vault writes, but the Obsidian community plugin itself is focused on the localhost note intake workflow inside the Obsidian desktop environment.
 
 ### Release assets
 

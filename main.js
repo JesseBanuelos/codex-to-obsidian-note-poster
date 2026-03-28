@@ -312,7 +312,7 @@ var ObsidianNotePosterPlugin = class extends import_obsidian.Plugin {
           reject(error);
           return;
         }
-        resolve(void 0);
+        resolve();
       });
     });
     this.server = null;
