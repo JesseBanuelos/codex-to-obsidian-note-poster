@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "obsidian-note-poster": {
+      "command": "node",
+      "args": [
+        "./src/server.mjs"
+      ],
+      "env": {
+        "OBSIDIAN_VAULT_PATH": "/Users/jessebanuelospersonalmacmini/Documents/Obsidian Vault"
+      }
+    }
+  }
+}

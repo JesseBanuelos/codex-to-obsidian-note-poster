@@ -1,0 +1,37 @@
+{
+  "name": "obsidian-note-poster",
+  "version": "0.1.0",
+  "description": "Create new notes in an Obsidian vault from Codex.",
+  "author": {
+    "name": "Jesse Banuelos",
+    "email": "local@example.com",
+    "url": "https://example.com/local"
+  },
+  "homepage": "https://example.com/local/obsidian-note-poster",
+  "repository": "https://example.com/local/obsidian-note-poster",
+  "license": "MIT",
+  "keywords": [
+    "obsidian",
+    "notes"
+  ],
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Obsidian Note Poster",
+    "shortDescription": "Create new Obsidian notes from Codex.",
+    "longDescription": "Adds a single MCP tool for creating brand-new Markdown notes in Jesse's configured Obsidian vault.",
+    "developerName": "Jesse Banuelos",
+    "category": "Productivity",
+    "capabilities": [
+      "Write"
+    ],
+    "websiteURL": "https://example.com/local/obsidian-note-poster",
+    "privacyPolicyURL": "https://example.com/local/privacy",
+    "termsOfServiceURL": "https://example.com/local/terms",
+    "defaultPrompt": [
+      "Create an Obsidian note for this meeting.",
+      "Save these bullets to my Obsidian vault.",
+      "Post this summary as a new note in Work/Status."
+    ],
+    "brandColor": "#B5651D"
+  }
+}
