@@ -1,0 +1,10 @@
+{
+  "id": "codex-note-poster",
+  "name": "Codex to Obsidian Note Poster",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "Creates new notes in a default folder through a localhost HTTP endpoint secured by an API key.",
+  "author": "Jesse Banuelos",
+  "authorUrl": "https://github.com/jessebanuelos",
+  "isDesktopOnly": true
+}
